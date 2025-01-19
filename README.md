@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Redux Starter for Next.js
+
+This is a simple Next.js starter project with Redux integrated. It features a basic counter application to demonstrate how to set up and use Redux in a Next.js environment.
+
+## Features
+
+- **Next.js Framework**: Built using `npx create-next-app@latest`.
+- **Redux Toolkit**: Includes Redux for state management.
+- **Counter Example**: A basic counter to illustrate Redux actions, reducers, and store setup.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the project locally:
 
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Fardeen26/redux-nextjs-starter.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Navigate to the Project Directory
+```bash
+cd redux-nextjs-starter
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Install Dependencies
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Run the Development Server
+```bash
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+redux-nextjs-starter/
+├── public/                       # Static assets
+├── src/
+│   ├── app/                      # Next.js pages
+│   ├── features/                 # Redux slice
+│   │   ├── counter/              # Counter slice
+│   │   │   ├── counterSlice.ts   # Counter reducer and actions
+│   ├── store/                    # Redux store configuration
+│   │   ├── StoreProvider.tsx     # Redux store provider
+│   │   └── store.ts              # Redux store configuration
+└── package.json                  # Project dependencies and scripts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How Redux is Integrated
 
-## Deploy on Vercel
+1. **Store Setup**:
+   - Located in `src/store/store.ts`.
+   - Configured using `@reduxjs/toolkit`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Slice Example**:
+   - A `counterSlice` is defined in `src/features/counter/counterSlice.ts`.
+   - Includes actions like `increment`, and `decrement`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Provider**:
+   - The Redux store is wrapped around the application in `src/store/StoreProvider.tsx` using the `Provider` from `react-redux`.
+    
+## Contributing
+
+Feel free to fork this repository and make contributions. Pull requests are welcome!
+
+---
+
+### Happy Coding! 🚀
